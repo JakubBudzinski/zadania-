@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<h1>PHP</h1>
+    
+
+<form action = "podsumowanie.php">
+   
+    
+    Imię
+    <input type= "text "name="Imie" />
+     <br/><br/>
+    
+     Nazwisko
+    <input type= "text" name="Nazwisko"/>
+    <br/><br/>
+    
+    Data
+    <input type= "date" name="Data"/>
+    <br/><br/>
+    
+    Miasto
+    <input type= "text" name="Miasto"/>
+    <br/><br/>
+  
+     Login
+    <input type= "text" name="Login"/>
+    <br/><br/>
+
+     Hasło
+    <input type= "text" name="Hasło"/>
+    <br/><br/>
+
+
+<input type="submit" value="zarejestruj">
+<input type="submit" value="powrót">
+
+    </form>
+    
+   
+   
+   
+   
+   
+   
+   <?php
+$imie = "Jakub";
+echo "<p>Witaj" .$imie."!";
+?>
+</body>
+</html>
