@@ -56,3 +56,48 @@ echo "<p>Witaj" .$imie."!";
 ?>
 </body>
 </html>
+
+
+
+podsumowanie.php
+
+
+    <?php
+    echo "<h2> Podsumowanie</h2>";
+    echo "<pre>";
+    print_r($_GET); 
+    echo "</pre>";
+
+    echo "<div>Imie:" . $_GET["Imie"] . "</div>";
+    echo "<div>Nazwisko:" . $_GET["Nazwisko"] . "</div>";
+    echo  "<div>Data:" . $_GET["Data"] . "</div>";
+    echo "<div>Miasto:" . $_GET["Miasto"] . "</div>";
+    echo  "<div>Login:" .$_GET["Login"] . "</div";
+    echo $_GET["Hasło"];
+    
+
+    ?>
+   
+   
+<body>
+<table style="width: 60%">
+  <tr>
+    <th>Imię</th>
+    <th>Nazwisko</th> 
+    <th>Wiek</th>
+    <th>Miasto</th>
+    <th>Login</th>
+  </tr>
+  <tr>
+  <th><?php echo $_GET["Imie"];?></th>
+    <th><?php echo $_GET["Nazwisko"];?></th> 
+    <th><?php echo $_GET["Data"];?></th>
+    <th><?php echo $_GET["Miasto"];?></th>
+    <th><?php echo $_GET["Login"];?></th>
+  </tr>
+  
+
+</table>
+
+
+
