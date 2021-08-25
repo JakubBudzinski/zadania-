@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Upload Image</title>
+ <style>
+     body{
+background-color:lightblue;
+ }
+ input{
+     width: 50%;
+     height: 5%;
+     border: 1px;
+     border-radius: 05px;
+     padding: 8px 15px 8px 15px;
+     margin: 10px 0px 15px 0px ;
+     box-shadow: 1px 1px 2px 1px grey;
+     font-weight: bold;
+ }
+     </style>
+</head>
+<body>
+<center>
+<h1>Upload /znajdz zdjecie w bazie danych <h1>
+
+    <form action="" method="POST" enctype="multipart/form/data">
+
+    <label>Wybierz zdjecie profilu </label><br>
+    <input type="file" name="image" id="image" /><br>
+
+    <label>Wpisz nazwe uzytkownika </label><br>
+    <input type="text" name="username" placeholder="Wpisz nazwe uzytkownika" /><br>
+
+    <label>Haslo </label><br>
+    <input type="text" name="designation"  placeholder="haslo" /><br>
+
+   
+    <input type="submit" name="upload" value="Upload /znajdz zdjecie w bazie danych" /><br>
+
+
+
+    </form>
+</center>
+
+
+   </html>
+<?php
+$connection = mysqli_content("localhost","root" ,"");
+$db = mysqli_select_db($connection,'kuba');
+
+if(isset($_POST["upload"]))
+{
+    $file = addslashes(file_get_contents($_FILES["image"]["tmp_name"]));
+    $username = $_POST['username'];
+    $designation = $_POST['designation'];
+
+    $query = "INSERT INTO `zdjęcia`(`image`,`username`,`designation`) VALUES ('$file','$username','$designation') " ;
+    $query_run =mysqli_query($connection,$query);
+
+    if ($query_run)
+    {
+        echo '<script type="text/javascript"> alert("Image Profile Uploaded") </script ';
+
+
+    }
+    {
+        echo '<script type="text/javascript"> alert("Image Profile Not Uploaded") </script ';
+    }
+
+}
+?>
